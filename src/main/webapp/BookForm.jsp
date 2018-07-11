@@ -28,15 +28,22 @@
     	<c:if test="${book == null}">
         	New Book Form
        	</c:if>
-       	
     </h2>
-	  <p><label>Title:</label>
+    
+	<p><label>Title:</label>
+	<c:if test="${book != null}">
+    	<input type="hidden" name="id" value="<c:out value='${book.id}' />" />
+    </c:if>
+    
     <input type="text" name="booktitle" /></p>
-	  <p><label>Author:</label>
+	
+	<p><label>Author:</label>
     <input type="text" name="bookauthor" /></p>
+    
     <p><label>Price:</label>
     <input type="text" name="bookprice" /></p>
-	  <p><input type="submit" value="Submit"></p>
+	
+	<p><input type="submit" value="Submit"></p>
 	</form>
 	</div>
 </body>
